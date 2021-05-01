@@ -1,0 +1,58 @@
+
+<app-alert-banner *ngIf="alertMessage !== ''" [alertMessage]="alertMessage" [alertClass]="alertClass"></app-alert-banner>
+<app-header [showNavigation]="true"></app-header>
+<div class="title font-semibold">
+    <a (click)="goBack()">
+        < Back</a>
+</div>
+<app-search class="search-container"></app-search>
+<div class="flex justify-center  m-20 align-top" *ngIf="!loading">
+    <mat-card >
+        <div>
+            <div class="game-title font-semibold">{{ gameDetails.title }}</div>
+        </div>
+    <div class="flex flex-wrap">
+    <div class="card game-details m10">
+        <div>
+            <div>
+                <button mat-icon-button class="add-button" (click)="addToCollection(gameDetails.gameId)" 
+                    matTooltip="Add to my collection." *ngIf="showAddButton">
+                    <mat-icon>add_box</mat-icon>
+                </button>
+            </div>
+        </div>
+        <div class="m-5">
+            <app-image [imageUrl]="gameDetails.imageUrl" [bigOrSmall]="'small'"></app-image>
+        </div>
+        <div>
+            <span class="font-semibold">Release Date:</span> {{ gameDetails.releaseDate | date}}
+        </div>
+        <div>
+            <span class="font-semibold">Publisher:</span> {{ gameDetails.publishers }}
+        </div>
+        <div>
+            <span class="font-semibold">Platform:</span> {{ gameDetails.platform?.name }}
+        </div>
+        <div *ngIf="gameDetails.genres">
+            <span class="font-semibold">Genres:</span>
+            <div *ngFor="let genre of gameDetails.genres">
+                --{{ genre }}
+            </div>
+        </div>
+        <div *ngIf="gameDetails.publishers">
+            <span class="font-semibold">Publishers:</span>
+            <div *ngFor="let publisher of gameDetails.publishers">
+                --{{ publisher }}
+            </div>
+        </div>
+    </div>
+    <div class="card m-5 game-overview">
+        {{ gameDetails.overview }}
+    </div>
+</div>
+</mat-card>
+</div>
+
+<div class="w-screen h-screen flex flex-col items-center justify-center" *ngIf="loading">
+    <mat-spinner></mat-spinner>
+</div>

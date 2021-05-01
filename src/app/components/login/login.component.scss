@@ -1,0 +1,12 @@
+
+
+.login-button{
+    &:hover {
+        opacity: .7;
+    }
+    &:disabled {
+        opacity: 1;
+        cursor: not-allowed;
+    }
+}
+

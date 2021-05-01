@@ -1,0 +1,60 @@
+.alert-banner {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    margin: 0 auto;
+    min-height: 60px;
+    border-radius: 3px;
+    z-index: 9999999999;
+    box-shadow: 0 0.125rem 0.375rem 0 rgba(36, 41, 54, 0.24);
+    font-weight: 600;    
+    display: flex;
+    justify-content: space-between;
+}
+
+.success {
+    background-image: linear-gradient(to right, #1D914B, #108740) !important;
+}
+
+.info {
+    background-image: linear-gradient(to right, #497199, #3d5e7f) !important;
+}
+
+.warning {
+    background-image: linear-gradient(to right,#AE7400,#A16C03);
+}
+
+.error {
+    background-image: linear-gradient(to right, #F32B46, #E61b36) !important;
+}
+
+.alert-body {
+    padding: .75rem 2.25rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: inherit;
+    color: #ffffff;
+}
+
+.dismiss-button {
+    background: none;
+    border-radius: 4px;
+    font-size: 14px;
+    padding: 5px 15px;
+    white-space: nowrap;
+    height: 35px;
+    color: white;
+    outline: 0;
+    border: 2px solid #ffffff;
+    float: right;
+    display: flex;
+    margin-top: 12px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.dismiss-button:hover {
+    opacity: 0.7;
+}

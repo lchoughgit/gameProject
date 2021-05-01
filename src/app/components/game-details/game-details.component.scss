@@ -1,0 +1,28 @@
+.card {
+    cursor: pointer;
+    min-width: 200px;
+    width: 200px;
+}
+
+.add-button {
+    right: 0px;
+    top: 0px;
+    position: absolute;   
+    &:hover {
+        opacity: .7;
+    }
+    color:seagreen;
+}
+
+.game-title {
+    font-size: 1.25em;
+}
+
+.game-details {
+    font-size: .9em;
+}
+
+.game-overview {
+    overflow-y: auto; 
+    height:430px;
+}

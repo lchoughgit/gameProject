@@ -1,0 +1,17 @@
+<mat-card class="game-card">
+        <div>
+            <mat-card-title class="game-title" (click)="goToGameDetails(game.gameId);">
+                {{ game.title }} 
+            </mat-card-title>
+        </div>
+        <div class="padding-left:10px;" *ngIf="showDelete">
+            <button class="delete-button" mat-icon-button (click)="deleteFromCollection(game.gameId)"
+                matTooltip="Remove from my collection.">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </div>    
+    <app-image [imageUrl]="game.imageUrl" (click)="goToGameDetails(game.gameId);"></app-image>
+    <div class="text-xs">
+        Platform: {{ game.platform }}
+    </div>
+</mat-card>

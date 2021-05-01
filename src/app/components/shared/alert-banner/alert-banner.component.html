@@ -1,0 +1,6 @@
+<div class="alert-banner" [ngClass]="alertClass" *ngIf="alertMessage !== ''">
+    <div class="alert-body" [innerHTML]="alertMessage"></div>
+    <button type="button" aria-label="click ok to dismiss this alert" class="dismiss-button" (click)="hide()">
+        OK
+    </button>
+</div>

@@ -1,0 +1,16 @@
+
+<div class="title font-semibold">My Games Collection</div>
+<app-alert-banner *ngIf="alertMessage !== ''" [alertMessage]="alertMessage" [alertClass]="alertClass"></app-alert-banner>
+<app-header [showNavigation]="true"></app-header>
+<app-search class="search-container"></app-search>
+<div *ngIf="!loading">
+    <div class="flex flex-wrap justify-center m-20"> 
+        <div *ngFor="let game of gameCollection" class="card m-5">
+            <app-game-card [game]="game" [showDelete]="true" (outGameDeleted)="getCollection()"></app-game-card>
+        </div>
+    </div>
+</div>
+
+<div class="w-screen h-screen flex flex-col items-center justify-center" *ngIf="loading">
+    <mat-spinner></mat-spinner>
+</div>

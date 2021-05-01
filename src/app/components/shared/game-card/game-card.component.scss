@@ -1,0 +1,26 @@
+.game-card {
+    cursor: pointer;
+    min-width: 200px;
+    width: 200px;
+}
+
+.game-title {
+    width: 155px;
+    color:midnightblue;    
+    &:hover {
+        opacity: .6;
+    }    
+    font-size: .9em;
+    min-height: 6em; // this assumes a title will never be so long that it requires more than 5em to display, thus disrupting card layout   
+}
+
+.delete-button {
+    color:#c7c7c7;
+    right: 1px;
+    top: 1px;
+    position: absolute;    
+    &:hover {
+        opacity: .6;
+    } 
+}
+

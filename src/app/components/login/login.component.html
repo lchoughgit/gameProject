@@ -1,0 +1,31 @@
+<app-alert-banner *ngIf="alertMessage !== ''" [alertMessage]="alertMessage" [alertClass]="alertClass">
+</app-alert-banner>
+<app-header [showNavigation]="false"></app-header>
+<div class="flex h-screen justify-center items-center">
+  <form>
+    <mat-card *ngIf="!loggingIn">
+      <mat-card-header>
+        <mat-card-title>Login</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div>
+          <mat-form-field>
+            <input matInput placeholder="Username" [(ngModel)]="username" name="username" required>
+            <mat-error *ngIf="username === ''">Required</mat-error>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <input matInput placeholder="Password" [(ngModel)]="password" type="password" name="password" required>
+            <mat-error *ngIf="password === ''">Required</mat-error>
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button (click)="login()" class="login-button" [disabled]="username==='' || password===''"
+          type="submit">Login</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+  <mat-spinner *ngIf="loggingIn"></mat-spinner>
+</div>
